@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "bufbuild.vscode-buf",
+        "eamodio.gitlens",
+        "streetsidesoftware.code-spell-checker",
+        "wayou.vscode-todo-highlight",
+        "golang.go"
+    ]
+}

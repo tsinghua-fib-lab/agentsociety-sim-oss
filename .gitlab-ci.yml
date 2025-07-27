@@ -1,0 +1,30 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  GIT_DEPTH: 0
+  VERSION_REGEX: /^v\d+\.\d+\.\d+.*$/
+  AWS_DEFAULT_REGION: "cn-north-4"
+  S3_BUCKET: "agentsociety"
+  S3_ENDPOINT: "https://obs.cn-north-4.myhuaweicloud.com"
+
+stages:
+  - build
+
+release-binary:
+  image: registry.fiblab.net/general/dev:latest
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG =~ $VERSION_REGEX
+  script:
+    - apt-get update
+    - apt-get install -y pkg-config awscli
+    - aws configure set aws_access_key_id "$AWS_ACCESS_KEY_ID"
+    - aws configure set aws_secret_access_key "$AWS_SECRET_ACCESS_KEY"
+    - aws configure set default.region "$AWS_DEFAULT_REGION"
+    # Linux版本
+    - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o moss-cpu .
+    - aws --endpoint-url "$S3_ENDPOINT" s3 cp moss-cpu "s3://$S3_BUCKET/moss-cpu/${CI_COMMIT_TAG}/moss-cpu-linux-amd64"
+    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file moss-cpu "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/moss-cpu/${CI_COMMIT_TAG}/moss-cpu-linux-amd64"'
+    # Mac ARM版本
+    - CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -a -o moss-cpu-macos-arm64 .
+    - aws --endpoint-url "$S3_ENDPOINT" s3 cp moss-cpu-macos-arm64 "s3://$S3_BUCKET/moss-cpu/${CI_COMMIT_TAG}/moss-cpu-darwin-arm64"
+    - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file moss-cpu-macos-arm64 "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/moss-cpu/${CI_COMMIT_TAG}/moss-cpu-darwin-arm64"'
