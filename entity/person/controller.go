@@ -1,13 +1,10 @@
 package person
 
 import (
-	"flag"
 	"fmt"
 	"math"
 
 	"git.fiblab.net/general/common/v2/mathutil"
-	personv2 "git.fiblab.net/sim/protos/v2/go/city/person/v2"
-	routingv2 "git.fiblab.net/sim/protos/v2/go/city/routing/v2"
 	"git.fiblab.net/sim/simulet-go/entity"
 	"git.fiblab.net/sim/simulet-go/entity/person/route"
 	"git.fiblab.net/sim/simulet-go/utils/randengine"
@@ -34,28 +31,6 @@ const (
 	// 功能：当加速度绝对值小于此值时认为加速度为零
 	zeroAThreshold = .1
 )
-
-var (
-	// maxAccRatio 加速度最大值比例
-	// 功能：控制车辆最大加速度的缩放比例
-	maxAccRatio = flag.Float64("veh.max_acc_ratio", 1, "加速度最大值比例")
-)
-
-// vehicleControlChan 车辆控制通道数据结构
-// 功能：用于外部控制车辆行为的通信通道
-type vehicleControlChan struct {
-	id         int32                // 车辆ID
-	env        *personv2.VehicleEnv // 车辆环境信息
-	actionChan chan Action          // 动作响应通道
-}
-
-// vehicleRouteChan 车辆路由通道数据结构
-// 功能：用于外部控制车辆路由的通信通道
-type vehicleRouteChan struct {
-	id        int32                   // 车辆ID
-	env       *personv2.VehicleEnv    // 车辆环境信息
-	routeChan chan *routingv2.Journey // 路由响应通道
-}
 
 // controller 车辆控制器
 // 功能：管理车辆的所有控制逻辑，包括跟车、变道、速度控制等
@@ -126,17 +101,6 @@ const (
 	shadowEnv                // 影子环境（变道时）
 	leftEnv                  // 左侧环境
 	rightEnv                 // 右侧环境
-)
-
-var (
-	// env2VehicleRelation 环境类型到车辆关系的映射
-	// 功能：将环境类型映射到相应的车辆关系描述
-	env2VehicleRelation = map[envType][2]personv2.VehicleRelation{
-		curEnv:    {personv2.VehicleRelation_VEHICLE_RELATION_BEHIND, personv2.VehicleRelation_VEHICLE_RELATION_AHEAD},
-		shadowEnv: {personv2.VehicleRelation_VEHICLE_RELATION_SHADOW_BEHIND, personv2.VehicleRelation_VEHICLE_RELATION_SHADOW_AHEAD},
-		leftEnv:   {personv2.VehicleRelation_VEHICLE_RELATION_LEFT_BEHIND, personv2.VehicleRelation_VEHICLE_RELATION_LEFT_AHEAD},
-		rightEnv:  {personv2.VehicleRelation_VEHICLE_RELATION_RIGHT_BEHIND, personv2.VehicleRelation_VEHICLE_RELATION_RIGHT_AHEAD},
-	}
 )
 
 // envVehicle 环境中的车辆信息
