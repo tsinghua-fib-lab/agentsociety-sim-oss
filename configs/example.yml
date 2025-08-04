@@ -1,0 +1,22 @@
+input:
+  # mongodb地址
+  uri: "mongodb://user:password@host:port"
+  # 地图
+  map:
+    db: "map_db"
+    col: "map_coll"
+  # 人
+  person:
+    db: "person_db"
+    col: "person_coll"
+    # file: /path/to/person.pb
+
+control:
+  step:
+    # 模拟器起始步
+    start: 0
+    # 模拟总步数，结束步为起始步+总步数
+    total: 7200
+    # 每步的时间间隔
+    interval: 1
+  prefer_fixed_light: true
