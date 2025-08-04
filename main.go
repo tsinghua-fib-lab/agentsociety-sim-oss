@@ -11,9 +11,9 @@ import (
 	"git.fiblab.net/sim/syncer/v3"
 	easy "git.fiblab.net/utils/logrus-easy-formatter"
 	"github.com/sirupsen/logrus"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/ecosim"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/task"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/config"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/ecosim"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/task"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/config"
 	"gopkg.in/yaml.v2"
 )
 

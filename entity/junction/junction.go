@@ -5,9 +5,9 @@ import (
 
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
 	"github.com/samber/lo"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/junction/trafficlight"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/randengine"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/junction/trafficlight"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/randengine"
 )
 
 var (

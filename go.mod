@@ -1,4 +1,4 @@
-module github.com/tsinghua-fib-lab/moss-agentsociety-go
+module github.com/tsinghua-fib-lab/agentsociety-sim-oss
 
 go 1.23.0
 

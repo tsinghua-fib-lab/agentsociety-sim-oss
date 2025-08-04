@@ -2,7 +2,7 @@ package person
 
 import (
 	"github.com/samber/lo"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
 )
 
 const (

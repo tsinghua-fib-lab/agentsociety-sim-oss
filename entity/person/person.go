@@ -12,11 +12,11 @@ import (
 	routingv2 "git.fiblab.net/sim/protos/v2/go/city/routing/v2"
 	tripv2 "git.fiblab.net/sim/protos/v2/go/city/trip/v2"
 	"github.com/samber/lo"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person/route"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person/schedule"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/randengine"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/person/route"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/person/schedule"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/container"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/randengine"
 )
 
 const (

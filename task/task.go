@@ -8,16 +8,16 @@ import (
 
 	"git.fiblab.net/sim/syncer/v3"
 	"github.com/sirupsen/logrus"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/clock"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/aoi"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/junction"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/lane"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person/route"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/road"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/config"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/input"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/clock"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/aoi"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/junction"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/lane"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/person"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/person/route"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/road"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/config"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/input"
 )
 
 // waitForServerReady 等待服务器就绪

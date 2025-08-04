@@ -4,7 +4,7 @@ import (
 	"git.fiblab.net/general/common/v2/geometry"
 	geov2 "git.fiblab.net/sim/protos/v2/go/city/geo/v2"
 	personv2 "git.fiblab.net/sim/protos/v2/go/city/person/v2"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
 )
 
 // lcRuntime 变道运行时数据结构

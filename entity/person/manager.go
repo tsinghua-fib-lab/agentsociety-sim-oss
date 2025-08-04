@@ -9,9 +9,9 @@ import (
 	personv2 "git.fiblab.net/sim/protos/v2/go/city/person/v2"
 	"git.fiblab.net/sim/protos/v2/go/city/person/v2/personv2connect"
 	"github.com/samber/lo"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person/route"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity/person/route"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/container"
 )
 
 // GlobalRuntime 全局运行时数据结构

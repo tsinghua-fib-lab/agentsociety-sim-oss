@@ -7,7 +7,7 @@ import (
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
 	personv2 "git.fiblab.net/sim/protos/v2/go/city/person/v2"
 	tripv2 "git.fiblab.net/sim/protos/v2/go/city/trip/v2"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/container"
 )
 
 // 方位常量

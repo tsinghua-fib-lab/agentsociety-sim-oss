@@ -1,7 +1,7 @@
 package person
 
 import (
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
 )
 
 // Action 车辆动作结构体

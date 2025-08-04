@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/container"
 )
 
 type testData struct {

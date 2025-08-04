@@ -5,7 +5,7 @@ import (
 
 	"git.fiblab.net/general/common/v2/mathutil"
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/entity"
 )
 
 // localTlRuntime 本地信号灯运行时数据结构

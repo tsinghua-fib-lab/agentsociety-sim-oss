@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"git.fiblab.net/sim/protos/v2/go/city/clock/v1/clockv1connect"
-	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/config"
+	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/utils/config"
 )
 
 // Clock 仿真时钟管理器
