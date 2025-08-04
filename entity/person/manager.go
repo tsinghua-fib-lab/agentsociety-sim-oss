@@ -8,10 +8,10 @@ import (
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
 	personv2 "git.fiblab.net/sim/protos/v2/go/city/person/v2"
 	"git.fiblab.net/sim/protos/v2/go/city/person/v2/personv2connect"
-	"git.fiblab.net/sim/simulet-go/entity"
-	"git.fiblab.net/sim/simulet-go/entity/person/route"
-	"git.fiblab.net/sim/simulet-go/utils/container"
 	"github.com/samber/lo"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person/route"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
 )
 
 // PersonManager Person管理器

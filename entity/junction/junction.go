@@ -4,10 +4,10 @@ import (
 	"errors"
 
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
-	"git.fiblab.net/sim/simulet-go/entity"
-	"git.fiblab.net/sim/simulet-go/entity/junction/trafficlight"
-	"git.fiblab.net/sim/simulet-go/utils/randengine"
 	"github.com/samber/lo"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/junction/trafficlight"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/randengine"
 )
 
 var (

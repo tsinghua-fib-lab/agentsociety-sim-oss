@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
-	"git.fiblab.net/sim/simulet-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 )
 
 // Road 道路实体

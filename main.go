@@ -8,12 +8,12 @@ import (
 
 	"connectrpc.com/connect"
 	"git.fiblab.net/sim/protos/v2/go/city/economy/v2/economyv2connect"
-	"git.fiblab.net/sim/simulet-go/ecosim"
-	"git.fiblab.net/sim/simulet-go/task"
-	"git.fiblab.net/sim/simulet-go/utils/config"
 	"git.fiblab.net/sim/syncer/v3"
 	easy "git.fiblab.net/utils/logrus-easy-formatter"
 	"github.com/sirupsen/logrus"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/ecosim"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/task"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/config"
 	"gopkg.in/yaml.v2"
 )
 

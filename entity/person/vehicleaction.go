@@ -1,7 +1,7 @@
 package person
 
 import (
-	"git.fiblab.net/sim/simulet-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 )
 
 // Action 车辆动作结构体

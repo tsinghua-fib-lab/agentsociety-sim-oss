@@ -1,8 +1,8 @@
 package person
 
 import (
-	"git.fiblab.net/sim/simulet-go/entity"
 	"github.com/samber/lo"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 )
 
 const (

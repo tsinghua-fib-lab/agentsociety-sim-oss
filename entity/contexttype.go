@@ -2,8 +2,8 @@ package entity
 
 import (
 	routingv2 "git.fiblab.net/sim/protos/v2/go/city/routing/v2"
-	"git.fiblab.net/sim/simulet-go/clock"
-	"git.fiblab.net/sim/simulet-go/utils/config"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/clock"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/config"
 )
 
 // 导航模块接口

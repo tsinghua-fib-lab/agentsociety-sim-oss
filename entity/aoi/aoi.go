@@ -6,9 +6,9 @@ import (
 	"git.fiblab.net/general/common/v2/geometry"
 	geov2 "git.fiblab.net/sim/protos/v2/go/city/geo/v2"
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
-	"git.fiblab.net/sim/simulet-go/entity"
-	"git.fiblab.net/sim/simulet-go/utils/randengine"
 	"github.com/samber/lo"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/randengine"
 )
 
 type aoiBufferItem struct {

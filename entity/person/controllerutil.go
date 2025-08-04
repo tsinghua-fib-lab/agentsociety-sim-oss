@@ -3,7 +3,7 @@ package person
 import (
 	"math"
 
-	"git.fiblab.net/sim/simulet-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 )
 
 // getLaneMaxV 获取车道最大速度

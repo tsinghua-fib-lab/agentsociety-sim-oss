@@ -6,7 +6,7 @@ import (
 	"git.fiblab.net/general/common/v2/parallel"
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
 	"git.fiblab.net/sim/protos/v2/go/city/map/v2/mapv2connect"
-	"git.fiblab.net/sim/simulet-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 
 	"github.com/samber/lo"
 )

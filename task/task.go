@@ -6,18 +6,18 @@ import (
 	"sync/atomic"
 	"time"
 
-	"git.fiblab.net/sim/simulet-go/clock"
-	"git.fiblab.net/sim/simulet-go/entity"
-	"git.fiblab.net/sim/simulet-go/entity/aoi"
-	"git.fiblab.net/sim/simulet-go/entity/junction"
-	"git.fiblab.net/sim/simulet-go/entity/lane"
-	"git.fiblab.net/sim/simulet-go/entity/person"
-	"git.fiblab.net/sim/simulet-go/entity/person/route"
-	"git.fiblab.net/sim/simulet-go/entity/road"
-	"git.fiblab.net/sim/simulet-go/utils/config"
-	"git.fiblab.net/sim/simulet-go/utils/input"
 	"git.fiblab.net/sim/syncer/v3"
 	"github.com/sirupsen/logrus"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/clock"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/aoi"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/junction"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/lane"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person/route"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/road"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/config"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/input"
 )
 
 // waitForServerReady 等待服务器就绪

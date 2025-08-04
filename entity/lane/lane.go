@@ -6,7 +6,7 @@ import (
 	"sort"
 	"sync"
 
-	"git.fiblab.net/sim/simulet-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 
 	"git.fiblab.net/general/common/v2/geometry"
 	"git.fiblab.net/general/common/v2/mathutil"

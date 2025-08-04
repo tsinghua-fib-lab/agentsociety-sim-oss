@@ -5,8 +5,8 @@ import (
 
 	routingv2 "git.fiblab.net/sim/protos/v2/go/city/routing/v2"
 	tripv2 "git.fiblab.net/sim/protos/v2/go/city/trip/v2"
-	"git.fiblab.net/sim/simulet-go/entity"
 	"github.com/samber/lo"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 )
 
 // 行人路径规划结果中的一段

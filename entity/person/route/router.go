@@ -1,8 +1,8 @@
 package route
 
 import (
-	"git.fiblab.net/sim/simulet-go/entity"
-	"git.fiblab.net/sim/simulet-go/utils/input"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/input"
 )
 
 // New 初始化导航服务

@@ -8,8 +8,8 @@ import (
 	geov2 "git.fiblab.net/sim/protos/v2/go/city/geo/v2"
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
 	tripv2 "git.fiblab.net/sim/protos/v2/go/city/trip/v2"
-	"git.fiblab.net/sim/simulet-go/entity"
 	"github.com/samber/lo"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 )
 
 // Schedule 时刻表

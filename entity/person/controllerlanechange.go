@@ -4,7 +4,7 @@ import (
 	"math"
 
 	"git.fiblab.net/general/common/v2/mathutil"
-	"git.fiblab.net/sim/simulet-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
 )
 
 const (

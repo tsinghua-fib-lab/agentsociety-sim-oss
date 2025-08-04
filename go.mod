@@ -1,4 +1,4 @@
-module git.fiblab.net/sim/simulet-go
+module github.com/tsinghua-fib-lab/moss-agentsociety-go
 
 go 1.23.0
 

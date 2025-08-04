@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"git.fiblab.net/sim/simulet-go/utils/container"
 	"github.com/stretchr/testify/assert"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
 )
 
 type testData struct {

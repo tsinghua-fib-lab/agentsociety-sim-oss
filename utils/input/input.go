@@ -12,7 +12,7 @@ import (
 	mapv2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
 	personv2 "git.fiblab.net/sim/protos/v2/go/city/person/v2"
 	tripv2 "git.fiblab.net/sim/protos/v2/go/city/trip/v2"
-	"git.fiblab.net/sim/simulet-go/utils/config"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/config"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

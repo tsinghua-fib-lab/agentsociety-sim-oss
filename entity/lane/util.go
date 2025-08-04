@@ -3,7 +3,7 @@ package lane
 import (
 	"sync"
 
-	"git.fiblab.net/sim/simulet-go/utils/container"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
 )
 
 // laneList 车道列表数据结构，用于管理车道上的车辆或行人

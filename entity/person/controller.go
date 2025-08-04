@@ -5,9 +5,9 @@ import (
 	"math"
 
 	"git.fiblab.net/general/common/v2/mathutil"
-	"git.fiblab.net/sim/simulet-go/entity"
-	"git.fiblab.net/sim/simulet-go/entity/person/route"
-	"git.fiblab.net/sim/simulet-go/utils/randengine"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/entity/person/route"
+	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/randengine"
 
 	"github.com/samber/lo"
 )
