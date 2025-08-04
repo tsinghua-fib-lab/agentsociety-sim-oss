@@ -5,11 +5,13 @@ import (
 	"flag"
 	"net/http"
 	"os"
+	"strings"
 
 	"connectrpc.com/connect"
 	"git.fiblab.net/sim/protos/v2/go/city/economy/v2/economyv2connect"
 	"git.fiblab.net/sim/syncer/v3"
 	easy "git.fiblab.net/utils/logrus-easy-formatter"
+	"github.com/samber/lo"
 	"github.com/sirupsen/logrus"
 	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/ecosim"
 	"github.com/tsinghua-fib-lab/agentsociety-sim-oss/task"
@@ -32,6 +34,8 @@ var (
 	// 数据加载input的缓存地址，设置为空则禁用缓存功能
 	// 缓存：将proto数据根据数据库db和col序列化到本地文件系统，并总是先试图从文件系统中加载
 	cacheDir = flag.String("cache", "data/", "input cache dir path (empty means disable cache)")
+	// 扩展
+	extension = flag.String("extension", "economy", "optional extensions (split by comma)")
 
 	// log
 	logLevels = map[string]logrus.Level{
@@ -95,17 +99,27 @@ func main() {
 		true,
 	)
 
-	// 创建经济模拟器实例
-	economySimulator := ecosim.NewServer()
+	// 扩展
+	extensions := strings.Split(*extension, ",")
+	extensions = lo.Uniq(extensions)
+	for _, ext := range extensions {
+		switch ext {
+		case "economy":
+			// 创建经济模拟器实例
+			economySimulator := ecosim.NewServer()
 
-	// 注册经济模拟器服务
-	sidecar.Register(
-		economyv2connect.OrgServiceName,
-		func(opts ...connect.HandlerOption) (pattern string, handler http.Handler) {
-			return economyv2connect.NewOrgServiceHandler(economySimulator, opts...)
-		},
-		syncer.WithNoLock(),
-	)
+			// 注册经济模拟器服务
+			sidecar.Register(
+				economyv2connect.OrgServiceName,
+				func(opts ...connect.HandlerOption) (pattern string, handler http.Handler) {
+					return economyv2connect.NewOrgServiceHandler(economySimulator, opts...)
+				},
+				syncer.WithNoLock(),
+			)
+		default:
+			log.Panicf("unknown extension: %s", ext)
+		}
+	}
 
 	t.Run()
 }
