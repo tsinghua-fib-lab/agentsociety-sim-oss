@@ -124,6 +124,8 @@ func (p *Person) updatePedestrian(dt float64) (isEnd bool) {
 		p.pedestrian.node = newPedestrianNode(p.runtime.S, p)
 		p.runtime.Lane.AddPedestrian(p.pedestrian.node)
 	}
+	// 更新统计
+	p.m.recordRunning(dt, ds)
 	return
 }
 

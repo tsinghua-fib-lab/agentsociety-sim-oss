@@ -276,6 +276,7 @@ func (p *Person) update(
 			} else {
 				p.runtime.Status = personv2.Status_STATUS_SLEEP
 			}
+			p.m.recordTripEnd(p)
 		}
 	case personv2.Status_STATUS_DRIVING:
 		isEnd := p.updateVehicle(dt)
@@ -288,6 +289,7 @@ func (p *Person) update(
 			} else {
 				p.runtime.Status = personv2.Status_STATUS_SLEEP
 			}
+			p.m.recordTripEnd(p)
 		}
 	default:
 		log.Panicf("unknown person %d status %v when update", p.ID(), p.runtime.Status)

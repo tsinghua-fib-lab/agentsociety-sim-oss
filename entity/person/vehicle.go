@@ -252,6 +252,8 @@ func (p *Person) refreshRuntime(ac Action, dt float64) (skipToEnd bool) {
 	p.runtime = newRuntime
 	// 更新车辆速度
 	p.runtime.V = v
+	// 更新统计
+	p.m.recordRunning(dt, d)
 	return skipToEnd
 }
 

@@ -182,3 +182,19 @@ func (m *PersonManager) ResetPersonPosition(ctx context.Context, in *connect.Req
 	p.resetPos = pos
 	return connect.NewResponse(&personv2.ResetPersonPositionResponse{}), nil
 }
+
+// GetGlobalStatistics 获取全局统计信息
+// 功能：获取全局统计信息
+// 参数：ctx-上下文，in-请求参数
+// 返回：全局统计信息响应，错误信息
+// 算法说明：
+// 1. 返回全局统计信息
+// 说明：提供全局统计信息的查询接口
+func (m *PersonManager) GetGlobalStatistics(ctx context.Context, in *connect.Request[personv2.GetGlobalStatisticsRequest]) (*connect.Response[personv2.GetGlobalStatisticsResponse], error) {
+	res := &personv2.GetGlobalStatisticsResponse{
+		NumCompletedTrips:          m.snapshot.NumCompletedTrips,
+		RunningTotalTravelTime:     m.snapshot.TravelTime,
+		RunningTotalTravelDistance: m.snapshot.TravelDistance,
+	}
+	return connect.NewResponse(res), nil
+}

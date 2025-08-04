@@ -14,6 +14,14 @@ import (
 	"github.com/tsinghua-fib-lab/moss-agentsociety-go/utils/container"
 )
 
+// GlobalRuntime 全局运行时数据结构
+// 功能：管理全局运行时数据，包括完成行程数、总行驶时间、总行驶距离
+type GlobalRuntime struct {
+	NumCompletedTrips int32   // 已完成的行程
+	TravelTime        float64 // 总行驶时间
+	TravelDistance    float64 // 总行驶距离
+}
+
 // PersonManager Person管理器
 // 功能：管理所有Person实体，提供创建、查找、初始化、更新等功能，支持多种控制模式
 type PersonManager struct {
@@ -29,6 +37,9 @@ type PersonManager struct {
 	personInserted      []*Person // 新加入的人
 	personInsertedMutex sync.Mutex
 	nextPersonID        int32
+
+	snapshot, runtime GlobalRuntime
+	runtimeMtx        sync.Mutex
 }
 
 // NewManager 创建Person管理器实例
@@ -140,6 +151,7 @@ func (m *PersonManager) Prepare() {
 	parallel.GoFor(m.persons.Data(), func(p *Person) {
 		p.prepare()
 	})
+	m.snapshot = m.runtime
 	log.Debug("PersonManager: prepare done")
 }
 
@@ -147,4 +159,21 @@ func (m *PersonManager) Prepare() {
 func (m *PersonManager) Update(dt float64) {
 	parallel.GoFor(m.persons.Data(), func(p *Person) { p.update(dt) })
 	route.CallbackWaitGroup.Wait()
+}
+
+// recordRunning 记录在路上的人车
+// 功能：记录在路上的人车，更新全局运行时数据
+func (m *PersonManager) recordRunning(dt float64, ds float64) {
+	m.runtimeMtx.Lock()
+	defer m.runtimeMtx.Unlock()
+	m.runtime.TravelTime += dt
+	m.runtime.TravelDistance += ds
+}
+
+// recordPedestrianTripEnd 记录行程结束
+// 功能：记录行程结束，更新全局运行时数据
+func (m *PersonManager) recordTripEnd(p *Person) {
+	m.runtimeMtx.Lock()
+	defer m.runtimeMtx.Unlock()
+	m.runtime.NumCompletedTrips++
 }
