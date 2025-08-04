@@ -3,8 +3,12 @@ package main
 import (
 	"encoding/base64"
 	"flag"
+	"net/http"
 	"os"
 
+	"connectrpc.com/connect"
+	"git.fiblab.net/sim/protos/v2/go/city/economy/v2/economyv2connect"
+	"git.fiblab.net/sim/simulet-go/ecosim"
 	"git.fiblab.net/sim/simulet-go/task"
 	"git.fiblab.net/sim/simulet-go/utils/config"
 	"git.fiblab.net/sim/syncer/v3"
@@ -89,6 +93,18 @@ func main() {
 		c,
 		sidecar,
 		true,
+	)
+
+	// 创建经济模拟器实例
+	economySimulator := ecosim.NewServer()
+
+	// 注册经济模拟器服务
+	sidecar.Register(
+		economyv2connect.OrgServiceName,
+		func(opts ...connect.HandlerOption) (pattern string, handler http.Handler) {
+			return economyv2connect.NewOrgServiceHandler(economySimulator, opts...)
+		},
+		syncer.WithNoLock(),
 	)
 
 	t.Run()
